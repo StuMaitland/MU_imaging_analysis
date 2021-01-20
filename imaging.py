@@ -27,10 +27,11 @@ We only want the second slice, this is where the MU data is.
 We can also trim the images to remove extra dark crud around them
 """
 
-
-Tk().withdraw()  # we don't want a full GUI, so keep the root window from appearing
+tk_ui = Tk()
+tk_ui.withdraw()  # we don't want a full GUI, so keep the root window from appearing
 filename = askopenfilename()  # show an "Open" dialog box and return the path to the selected file
 
+tk_ui.destroy()
 n1_img = nib.load(filename)
 print('Filename: "{}" loaded.'.format(filename))
 
